@@ -7,11 +7,23 @@
   </head>
   <body class="bg-dark text-light">
     <main>
-      <div class="time"></div>
-      <h1 class="header"></h1>
-      <h2 class="sub-header"></h2>
-      <ol class="answer-choices"></ol>
+      <div class="container">
+            <h1 class="card-timer float-right">Time:<span id="time">0</span></h1>
+      </div>
+
+      <h2 class="header"></h1>
+      <h3 class="sub-header"></h2>
+      <div class="question"></div>
+      <ol class="hide" id="choice-button">
+            <li><button id="answer-choice1"></button></li>
+           <li> <button id="answer-choice2"></button></li>
+           <li> <button id="answer-choice3"></button></li>
+           <li><button id="answer-choice4"></button></li>
+      </ol>
+      <h4 class="correct-wrong"></h4>
+        
     </main>
+
 
 
     <script type="text/javascript" src="./script.js" ></script>

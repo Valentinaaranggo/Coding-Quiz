@@ -1,0 +1,17 @@
+h1{
+ font-size: x-small;
+}
+.float-right{
+    float: right;
+}
+.card-timer{
+    display: inline-flex;
+    white-space: nowrap;
+}
+.answer-choice1,.answer-choice2,.answer-choice3,.answer-choice4,ol{
+    list-style: none;
+}
+.hide{
+    display: none;
+
+}
