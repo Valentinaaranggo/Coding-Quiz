@@ -16,13 +16,24 @@ var containerInput=document.querySelector(".container-input")
 var storage=document.querySelector(".storage");
 var submitBtn= document.querySelector(".submitBtn")
 var cardstorage=document.querySelector(".card");
-var userInitials=document.querySelector(".user-initials");
+var userInitials=document.querySelector("#user-initials");
+var playAgainBtn=document.querySelector(".play-again");
 var i=0;
 var startBtn= document.createElement('button');
 answerE1.addEventListener("click",nextquestion);
 answerE2.addEventListener("click",nextquestion);
 answerE3.addEventListener("click",nextquestion);
 answerE4.addEventListener("click",nextquestion);
+playAgainBtn.addEventListener("click", function(){
+    startChallenge();
+    startBtn.addEventListener('click', function(){ 
+        clearScreen();
+        time.textContent=secondsLeft;
+        timerInterval=setInterval(setTime,1000);
+        getQuestion();
+        ol.classList.remove("hide");
+    })
+});
 var ol= document.querySelector("#choice-button");
 var correct= document.querySelector('.correct-wrong');
 var timerInterval=setInterval(setTime,1000);
@@ -128,23 +139,19 @@ function getendPage (){
     
 }
 
-function setHighScore(){
-    endPage.classList.add("hide");
-    timeE1.classList.add("hide");
-    containerInput.classList.add("hide");
-    localStorage.setItem("eventListener", value);
-    localStorage.getItem("eventListener");
 
-}
 function renderLastRegistered() {
     var initials = localStorage.getItem("initials");
 
-  
-    userInitials.textContent = initials;
+    userInitials.textContent = initials+ "- "+ secondsLeft;
   }
   
   submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
+    endPage.classList.add("hide")
+    containerInput.classList.add("hide");
+    cardstorage.classList.remove("hide");
+
   
     var initials = document.querySelector("#initials").value;
   
@@ -153,7 +160,10 @@ function renderLastRegistered() {
       renderLastRegistered();
     }
   );
-  
+
+  function playAgain(){
+    startChallenge
+}
 
 startChallenge();
 
