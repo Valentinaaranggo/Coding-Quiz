@@ -16,7 +16,7 @@ var containerInput=document.querySelector(".container-input")
 var storage=document.querySelector(".storage");
 var submitBtn= document.querySelector(".submitBtn")
 var cardstorage=document.querySelector(".card");
-var userInitials=document.querySelector("#user-initials");
+var userInitials=document.querySelector(".user-initials");
 var i=0;
 var startBtn= document.createElement('button');
 answerE1.addEventListener("click",nextquestion);
@@ -139,7 +139,8 @@ function setHighScore(){
 function renderLastRegistered() {
     var initials = localStorage.getItem("initials");
 
-    userInitials.textContent = initials+ "- "+ secondsLeft;
+  
+    userInitials.textContent = initials;
   }
   
   submitBtn.addEventListener("click", function(event) {
