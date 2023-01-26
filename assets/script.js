@@ -8,6 +8,15 @@ var answerE1=document.querySelector("#answer-choice1");
 var answerE2=document.querySelector("#answer-choice2");
 var answerE3=document.querySelector("#answer-choice3");
 var answerE4=document.querySelector("#answer-choice4");
+var endHeader=document.querySelector(".end-header");
+var scoreHeader=document.querySelector(".score");
+var textAreaEl=document.querySelector(".initials");
+var endPage=document.querySelector(".container-end");
+var containerInput=document.querySelector(".container-input")
+var storage=document.querySelector(".storage");
+var submitBtn= document.querySelector(".submitBtn")
+var cardstorage=document.querySelector(".card");
+var userInitials=document.querySelector("#user-initials");
 var i=0;
 var startBtn= document.createElement('button');
 answerE1.addEventListener("click",nextquestion);
@@ -55,6 +64,7 @@ function nextquestion(event){
     else{
         correct.textContent="wrong!"
         secondsLeft-=15
+        time.textContent=secondsLeft;
     }
     i++;
     if(i===length){
@@ -112,13 +122,37 @@ function getendPage (){
     questionE1.classList.add("hide");
     ol.classList.add("hide");
     correct.classList.add("hide");
-
-
+    containerInput.classList.remove("hide");
+    endHeader.textContent="All Done!";
+    scoreHeader.textContent="Your final score is: " + secondsLeft; 
     
 }
 
+function setHighScore(){
+    endPage.classList.add("hide");
+    timeE1.classList.add("hide");
+    containerInput.classList.add("hide");
+    localStorage.setItem("eventListener", value);
+    localStorage.getItem("eventListener");
 
+}
+function renderLastRegistered() {
+    var initials = localStorage.getItem("initials");
 
+    userInitials.textContent = initials+ "- "+ secondsLeft;
+  }
+  
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+  
+    var initials = document.querySelector("#initials").value;
+  
+  
+      localStorage.setItem("initials", initials);
+      renderLastRegistered();
+    }
+  );
+  
 
 startChallenge();
 

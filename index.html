@@ -10,17 +10,35 @@
       <div class="container">
             <h1 class="card-timer float-right">Time:<span id="time">0</span></h1>
       </div>
-
-      <h2 class="header"></h1>
-      <h3 class="sub-header"></h2>
-      <div class="question"></div>
-      <ol class="hide" id="choice-button">
+      <div class="container">
+        <h2 class="header"></h1>
+        <h3 class="sub-header"></h2>
+      </div>
+      <div class="container">
+        <div class="question"></div>
+      
+          <ol class="hide" id="choice-button">
             <li><button id="answer-choice1"></button></li>
-           <li> <button id="answer-choice2"></button></li>
-           <li> <button id="answer-choice3"></button></li>
-           <li><button id="answer-choice4"></button></li>
-      </ol>
-      <h4 class="correct-wrong"></h4>
+            <li> <button id="answer-choice2"></button></li>
+            <li> <button id="answer-choice3"></button></li>
+            <li><button id="answer-choice4"></button></li>
+          </ol>
+        <h4 class="correct-wrong"></h4>
+      </div>
+      <div class="container">
+        <h5 class="end-header"></h5>
+        <h6 class="score"></h6>
+      </div>
+      <div class="hide container-input">
+      <label for="initials">enter initials: </label>
+      <input class="storage" type="text" name="initials" id="initials" placeholder="initials">
+      <p class="text"></p>
+      <button class="submitBtn">Submit</button>
+    </div>
+    <div class="card">
+      <h2>High scores:</h2>
+      <span id="user-initials"></span>
+    </div>
         
     </main>
 
